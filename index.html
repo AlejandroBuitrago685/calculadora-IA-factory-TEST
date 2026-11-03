@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#11182b">
+  <title>Órbita · Calculadora</title>
+  <link rel="stylesheet" href="./src/styles.css">
+  <script type="module" src="./src/app.js"></script>
+</head>
+<body>
+  <main>
+    <header class="brand"><span class="logo" aria-hidden="true">◒</span><div><h1>Órbita</h1><p>Un espacio para tus números.</p></div><span class="badge">CALCULADORA PERSONAL</span></header>
+    <div class="workspace">
+      <section class="calculator" aria-label="Calculadora">
+        <div class="toolbar"><span class="eyebrow">HAZ LAS CUENTAS</span><div class="mode" aria-label="Unidad angular"><button type="button" id="deg" aria-pressed="true">DEG</button><button type="button" id="rad" aria-pressed="false">RAD</button></div></div>
+        <div class="screen">
+          <label for="expression">Tu operación</label>
+          <input id="expression" type="text" maxlength="1000" autocomplete="off" spellcheck="false" placeholder="Ej. (24 + 6) / 4" aria-describedby="help">
+          <div class="result-line"><span id="approx" aria-label="Resultado aproximado"></span><output id="result" aria-live="polite" aria-atomic="true">0</output></div>
+          <p id="status" role="status">Todo empieza con una operación.</p>
+        </div>
+        <div class="keypad" aria-label="Teclado de operaciones">
+          <button class="clear" data-action="clear">AC</button><button data-insert="(" aria-label="Abrir paréntesis">(</button><button data-insert=")" aria-label="Cerrar paréntesis">)</button><button data-action="delete" aria-label="Borrar carácter">⌫</button>
+          <button data-insert="7">7</button><button data-insert="8">8</button><button data-insert="9">9</button><button class="operator" data-insert="/" aria-label="Dividir">÷</button>
+          <button data-insert="4">4</button><button data-insert="5">5</button><button data-insert="6">6</button><button class="operator" data-insert="*" aria-label="Multiplicar">×</button>
+          <button data-insert="1">1</button><button data-insert="2">2</button><button data-insert="3">3</button><button class="operator" data-insert="-" aria-label="Restar">−</button>
+          <button data-insert="0">0</button><button data-insert="," aria-label="Coma decimal">,</button><button data-insert="%" aria-label="Porcentaje">%</button><button class="operator" data-insert="+" aria-label="Sumar">+</button>
+          <button data-insert="Ans" title="Último resultado con toda su precisión">Ans</button><button class="equals" data-action="calculate">Calcular <span aria-hidden="true">=</span></button>
+        </div>
+        <details class="science"><summary>Funciones científicas</summary><div class="science-grid">
+          <button data-insert="sqrt(" aria-label="Raíz cuadrada">√</button><button data-insert="^" aria-label="Potencia">xʸ</button><button data-insert="abs(">abs</button><button data-insert="pi" aria-label="Pi">π</button><button data-insert="e">e</button><button data-insert="ln(">ln</button><button data-insert="log(">log</button><button data-insert="sin(">sin</button><button data-insert="cos(">cos</button><button data-insert="tan(">tan</button>
+        </div></details>
+      </section>
+      <aside class="history-panel"><div class="history-heading"><h2>Historial</h2><button id="clear-history" aria-label="Limpiar historial">Limpiar</button></div><p class="muted">Tus últimas 20 operaciones, a un clic.</p><p id="empty-history">Aquí aparecerán tus ideas resueltas.<br><span>Calcula algo para empezar.</span></p><ol id="history"></ol><div class="help" id="help"><h3>A tu ritmo</h3><p><kbd>Enter</kbd> calcula · <kbd>Esc</kbd> limpia</p><p>Usa punto o coma decimal y * para multiplicar: 2*(3+4).</p><p>% divide entre 100: 200*10% = 20; 200+10% = 200,1.</p><p>Funciones con paréntesis: sin(30). DEG usa grados; RAD, radianes.</p><p>Ans conserva la precisión del último resultado. ≈ indica redondeo; se muestran hasta 3 decimales.</p></div></aside>
+    </div>
+    <footer>Sin cuentas. Sin distracciones. Solo tus cálculos.</footer>
+  </main>
+</body>
+</html>
