@@ -1,4 +1,4 @@
-# Órbita · Calculadora personal
+# MAXY · Calculadora personal
 
 Calculadora web gratuita y adaptable a móvil y escritorio, sin cuentas, servicios externos ni dependencias. Implementa el alcance de `PLAN.md` con JavaScript nativo.
 
@@ -41,6 +41,6 @@ Entrada limitada a 1000 caracteres y 80 niveles recursivos. El parser usa una li
 
 `npm test` ejecuta pruebas nativas de Node sobre precedencia, decimales, funciones, errores, límites, formato y eventos de interfaz mediante un doble DOM local. Estas últimas comprueban edición, teclado, Ans, recuperación de historial y modos angulares; no sustituyen una prueba de navegador.
 
-Verificación realizada: 72 pruebas aprobadas, build generado correctamente y `git diff --check` sin errores. El entorno restringido bloqueó el lanzamiento inicial de subprocesos (`spawn EPERM`); el script de pruebas usa `--experimental-test-isolation=none` para ejecutar la misma suite en un solo proceso.
+Verificación del cambio a MAXY: 80 pruebas aprobadas, build generado correctamente y `git diff --check` sin errores. Las pruebas de aceptación adicionales combinan evaluación y formato, incluidos operandos con más de tres decimales y reutilización de Ans sin redondear. El script de pruebas usa `--experimental-test-isolation=none` para ejecutar la suite en un solo proceso.
 
 La revisión visual manual a 320 px, tableta, escritorio y zoom al 200 %, así como la comprobación con lector de pantalla, queda pendiente: no se ha usado red, servidor local ni herramientas de navegador en esta implementación. El diseño incluye controles de al menos 44 px, foco visible, región de estado, etiquetas accesibles y respeto por movimiento reducido.
